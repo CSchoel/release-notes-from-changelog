@@ -18,3 +18,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 
 [nothing]
+
+
+## [0.1.0]
+
+### Added
+
+* first version of `action.yml`
+* changelog, readme and `RELEASE_HEAD.md`
