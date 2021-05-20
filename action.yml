@@ -1,4 +1,4 @@
-name: 'Create release notes'
+name: Create release notes
 description: |
   Extracts release notes for current tag from CHANGELOG.md and writes them to a file called RELEASE.md.
   It is assumed that a header for RELEASE.md is found in the file RELEASE_HEAD.md.
