@@ -1,0 +1,23 @@
+name: 'Create release notes'
+description: |
+  Extracts release notes for current tag from CHANGELOG.md and writes them to a file called RELEASE.md.
+  It is assumed that a header for RELEASE.md is found in the file RELEASE_HEAD.md.
+inputs:
+  version:
+    description: 'Version number to search for in CHANGELOG.md (default: use tag without leading v)'
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - name: Set env
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+    - name: Extract changelog for release version
+      # explanation of sed command:
+      # 1. select lines between those starting with `## [x.y.z]` and `## `
+      # 2. invert this selection
+      # 3. delete it
+      # => only selection is remaining in stream
+      run: |
+        cp RELEASE_HEAD.md RELEASE.md
+        printf "\n" >> RELEASE.md
+        sed -e "/^## \\[${RELEASE_VERSION:1}\\]/,/^## / ! d" CHANGELOG.md | head -n -2 >> RELEASE.md
