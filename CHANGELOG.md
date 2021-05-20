@@ -20,6 +20,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 [nothing]
 
 
+## [0.1.1]
+
+### Fixed
+
+- since `if:` is not supported in composite actions, we now use the bash for the if statement
+- added missing parameters to action.yml (`shell:`)
+
 ## [0.1.0]
 
 ### Added
