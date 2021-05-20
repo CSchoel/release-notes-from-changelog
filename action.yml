@@ -18,17 +18,18 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Set env (default)
-      if: ${{ version == "<tag version>" }}
+    - name: Set RELEASE_VERSION
+      shell: bash
       run: |
-        RELEASE_VERSION_TEMP=${GITHUB_REF#refs/*/}
-        echo "RELEASE_VERSION=${RELEASE_VERSION_TEMP#v}" >> $GITHUB_ENV
-
-    - name: Set env (custom)
-      if: ${{ version != "<tag version>" }}
-      run: echo "RELEASE_VERSION=${{ version }}" >> $GITHUB_ENV
+        if [ $version == "<tag version>" ] then
+          echo "RELEASE_VERSION=$version" >> $GITHUB_ENV
+        else
+          RELEASE_VERSION_TEMP=${GITHUB_REF#refs/*/}
+          echo "RELEASE_VERSION=${RELEASE_VERSION_TEMP#v}" >> $GITHUB_ENV
+        fi
 
     - name: Extract changelog for release version
+      shell: bash
       # explanation of sed command:
       # 1. select lines between start-pattern and end-pattern
       # 2. invert this selection
