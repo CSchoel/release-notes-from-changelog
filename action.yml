@@ -21,7 +21,7 @@ runs:
     - name: Set RELEASE_VERSION
       shell: bash
       run: >
-        if [ $INPUT_VERSION == "<tag version>" ]; then
+        if [ "$INPUT_VERSION" = "<tag version>" ]; then
           echo "RELEASE_VERSION=$INPUT_VERSION" >> $GITHUB_ENV;
         else
           RELEASE_VERSION_TEMP=${GITHUB_REF#refs/*/};
