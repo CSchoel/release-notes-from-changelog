@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.2]
+
+### Changed
+
+- uses $INPUT_VERSION instead of $version
+- renames start and end pattern to not use dash
 
 ## [0.1.1]
 
