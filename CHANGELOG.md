@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.4]
+
+### Fixed
+
+- uses folded block (`<`) instead of literal block (`|`) for bash if
+
 ## [0.1.3]
 
 ### Fixed
