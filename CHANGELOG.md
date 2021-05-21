@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.5]
+
+### Fixed
+
+- bash if syntax was wrong (need `=` instead of `==` and quotes around variable)
+- adds missing checkout action to test script
+
 ## [0.1.4]
 
 ### Fixed
