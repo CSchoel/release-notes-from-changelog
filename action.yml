@@ -38,4 +38,4 @@ runs:
       run: |
         cp RELEASE_HEAD.md RELEASE.md
         printf "\n" >> RELEASE.md
-        sed -e "/${{ startPattern }}/,/${{ endPattern }}/ ! d" CHANGELOG.md | head -n -2 >> RELEASE.md
+        sed -e "/${{ inputs.startPattern }}/,/${{ inputs.endPattern }}/ ! d" CHANGELOG.md | head -n -2 >> RELEASE.md
