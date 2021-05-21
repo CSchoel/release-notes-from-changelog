@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.3]
+
+### Fixed
+
+- adds `inputs.` prefix to access input variables
+
 ## [0.1.2]
 
 ### Changed

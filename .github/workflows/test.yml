@@ -8,7 +8,7 @@ jobs:
     name: Create release for this action (with this action :D)
     runs-on: ubuntu-latest
     steps:
-      - uses: CSchoel/release-notes-from-changelog@v0.1.2
+      - uses: CSchoel/release-notes-from-changelog@v0.1.3
       - uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
