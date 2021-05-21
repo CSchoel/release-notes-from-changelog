@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-first:
+    name: Create release notes for first version in changelog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: CSchoel/release-notes-from-changelog@v0.1.5
+        with:
+          version: 0.1.0
+      - run: cat RELASE.md
+  build-pattern:
+    name: Create release notes for first version in changelog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: CSchoel/release-notes-from-changelog@v0.1.5
+        with:
+          version: 0.1.5
+          startPattern: ^### Fixed
+          endPattern: ^##
+      - run: cat RELASE.md
