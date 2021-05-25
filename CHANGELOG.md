@@ -19,6 +19,13 @@ nothing
 
 nothing
 
+## [1.0.0] - 2021-05-25
+
+### Changed
+
+* adds shorthand tag v1 for use in GitHub action workflows
+* otherwise same as 0.2.1
+
 ## [0.2.1]
 
 ### Added
@@ -106,7 +113,8 @@ nothing
 * changelog, readme and `RELEASE_HEAD.md`
 
 
-[Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.0..HEAD
+[Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.0.0..HEAD
+[1.0.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.1..v1.0.0
 [0.2.1]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.0..v0.2.1
 [0.2.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.1.9..v0.2.0
 [0.1.9]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.1.8..v0.1.9
