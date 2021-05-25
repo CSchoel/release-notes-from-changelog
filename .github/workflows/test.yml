@@ -15,7 +15,7 @@ jobs:
           chop: 0
       - run: cat RELEASE.md
   build-pattern:
-    name: Uses explicit start and end pattern
+    name: Uses explicit begin and end pattern
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
