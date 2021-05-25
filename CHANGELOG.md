@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.6]
+
+### Added
+
+* GitHub actions test script for testing different scenarios
+* echo of sed pattern for debugging
+
 ## [0.1.5]
 
 ### Fixed
