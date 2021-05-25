@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.8]
+
+### Fixed
+
+* turns out that inputs are not actually saved as `$INPUT_VARNAME` for composite actions => use `${{ input.varname }}` instead
+
 ## [0.1.7]
 
 ### Fixed
