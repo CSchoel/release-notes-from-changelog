@@ -11,7 +11,7 @@ jobs:
       - uses: CSchoel/release-notes-from-changelog@v0.1.9
         with:
           version: 0.1.0
-          end-pattern: 'and \`RELEASE_HEAD.md\`'
+          end-pattern: '$'
           chop: 0
       - run: cat RELEASE.md
   build-pattern:
@@ -22,6 +22,6 @@ jobs:
       - uses: CSchoel/release-notes-from-changelog@v0.1.9
         with:
           version: 0.1.5
-          start-pattern: '^### Fixed'
-          end-pattern: '^##'
+          begin-pattern: '/^### Fixed/'
+          end-pattern: '/^##/'
       - run: cat RELEASE.md
