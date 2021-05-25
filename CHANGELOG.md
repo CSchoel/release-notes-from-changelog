@@ -19,6 +19,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.2.0]
+
+### Changed
+
+* renames `start-pattern` to `begin-pattern` for better naming consistency (begin/end instead of start/end)
+* adds surrounding slashes to `begin-pattern` and `end-pattern`, so that other sed patterns like `$` can be used
+
+### Fixed
+
+[nothing]
+
 ## [0.1.9]
 
 ### Added
