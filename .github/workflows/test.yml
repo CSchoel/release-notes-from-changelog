@@ -11,7 +11,7 @@ jobs:
       - uses: CSchoel/release-notes-from-changelog@v0.1.8
         with:
           version: 0.1.0
-          endPattern: 'and \`RELEASE_HEAD.md\`'
+          end-pattern: 'and \`RELEASE_HEAD.md\`'
       - run: cat RELEASE.md
   build-pattern:
     name: Uses explicit start and end pattern
@@ -21,6 +21,6 @@ jobs:
       - uses: CSchoel/release-notes-from-changelog@v0.1.8
         with:
           version: 0.1.5
-          startPattern: '^### Fixed'
-          endPattern: '^##'
+          start-pattern: '^### Fixed'
+          end-pattern: '^##'
       - run: cat RELEASE.md

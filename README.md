@@ -30,8 +30,8 @@ jobs:
 - uses: CSchoel/release-notes-from-changelog@v1
   with:
     version: version string to search in the changelog
-    startPattern: start pattern used in sed command (default '^## \\[${RELEASE_VERSION}\\]')
-    endPattern: end pattern used in sed command (default '^## ')
+    start-pattern: start pattern used in sed command (default '^## \\[${RELEASE_VERSION}\\]')
+    end-pattern: end pattern used in sed command (default '^## ')
 ```
 
 ## Known issues
@@ -40,5 +40,5 @@ The default settings do not work for the very first version in the changelog, as
 To circumvent this, you can do one of the following:
 
 * Add a dummy level 2 heading at the end of your changelog for the first release. Starting from the second release, you can safely remove it.
-* Set the `endPattern` to the last few words of the changelog entry for the first version. You *have* to change this for future versions, of course.
+* Set the `end-pattern` to the last few words of the changelog entry for the first version. You *have* to change this for future versions, of course. An example for this can be seen in the [test workflow](.github/workflows/test.yml) for this project.
 * Make the first entry in the changelog a pre-release that will not actually be release, but still look sensible in the changelog.

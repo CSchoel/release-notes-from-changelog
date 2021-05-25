@@ -7,11 +7,11 @@ inputs:
     description: 'Version number to search for in CHANGELOG.md (default: use tag without leading v)'
     required: false
     default: <tag version>
-  startPattern:
+  start-pattern:
     description: Sed pattern to find heading with correct version in CHANGELOG.md
     required: false
     default: '^## \\[${RELEASE_VERSION}\\]'
-  endPattern:
+  end-pattern:
     description: Sed pattern to find next heading in CHANGELOG.md that does not belong to this version anymore
     required: false
     default: '^## '
@@ -31,12 +31,12 @@ runs:
     - name: Extract changelog for release version
       shell: bash
       # explanation of sed command:
-      # 1. select lines between startPattern and endPattern
+      # 1. select lines between start-pattern and end-pattern
       # 2. invert this selection
       # 3. delete it
       # => only selection is remaining in stream
       run: |
         cp RELEASE_HEAD.md RELEASE.md
         printf "\n" >> RELEASE.md
-        echo "Pattern used for sed: /${{ inputs.startPattern }}/,/${{ inputs.endPattern }}/ ! d"
-        sed -e "/${{ inputs.startPattern }}/,/${{ inputs.endPattern }}/ ! d" CHANGELOG.md | head -n -2 >> RELEASE.md
+        echo "Pattern used for sed: /${{ inputs.start-pattern }}/,/${{ inputs.end-pattern }}/ ! d"
+        sed -e "/${{ inputs.start-pattern }}/,/${{ inputs.end-pattern }}/ ! d" CHANGELOG.md | head -n -2 >> RELEASE.md
