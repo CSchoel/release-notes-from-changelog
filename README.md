@@ -32,6 +32,7 @@ jobs:
     version: version string to search in the changelog
     begin-pattern: begin pattern used in sed command (default '/^## \\[${RELEASE_VERSION}\\]/')
     end-pattern: end pattern used in sed command (default '/^## /')
+    chop: number of lines to cut from end of matched region
 ```
 
 ## Known issues
