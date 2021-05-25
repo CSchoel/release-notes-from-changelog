@@ -15,6 +15,10 @@ inputs:
     description: Sed pattern to find next heading in CHANGELOG.md that does not belong to this version anymore
     required: false
     default: '/^## /'
+  link-pattern:
+    description: Grep pattern to find footnote-style compare link for this version (optional)
+    required: false
+    default: '^\\[${RELEASE_VERSION}\\]:'
   chop:
     description: 'Number of lines to chop from end of matching part of CHANGELOG.md'
     required: false
@@ -44,3 +48,5 @@ runs:
         printf "\n" >> RELEASE.md
         echo "Pattern used for sed: ${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d"
         sed -e "${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d" CHANGELOG.md | head -n -${{ inputs.chop }} >> RELEASE.md
+        printf "\n" >> RELEASE.md
+        grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md

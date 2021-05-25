@@ -32,6 +32,7 @@ jobs:
     version: version string to search in the changelog
     begin-pattern: begin pattern used in sed command (default '/^## \\[${RELEASE_VERSION}\\]/')
     end-pattern: end pattern used in sed command (default '/^## /')
+    link-pattern: pattern used in grep command to find footnote-style link for version (default '^\\[${RELEASE_VERSION}\\]:')
     chop: number of lines to cut from end of matched region
 ```
 
