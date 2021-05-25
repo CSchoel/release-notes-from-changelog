@@ -12,6 +12,7 @@ jobs:
         with:
           version: 0.1.0
           end-pattern: 'and \`RELEASE_HEAD.md\`'
+          chop: 0
       - run: cat RELEASE.md
   build-pattern:
     name: Uses explicit start and end pattern
