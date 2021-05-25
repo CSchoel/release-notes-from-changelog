@@ -21,11 +21,11 @@ runs:
     - name: Set RELEASE_VERSION
       shell: bash
       run: >
-        if [ "$INPUT_VERSION" = "<tag version>" ]; then
+        if [ "${{ inputs.version }}" = "<tag version>" ]; then
           RELEASE_VERSION_TEMP=${GITHUB_REF#refs/*/};
           echo "RELEASE_VERSION=${RELEASE_VERSION_TEMP#v}" >> $GITHUB_ENV;
         else
-          echo "RELEASE_VERSION=$INPUT_VERSION" >> $GITHUB_ENV;
+          echo "RELEASE_VERSION=${{ inputs.version }}" >> $GITHUB_ENV;
         fi
 
     - name: Extract changelog for release version
