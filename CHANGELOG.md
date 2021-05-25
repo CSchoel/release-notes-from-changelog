@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.9]
+
+### Added
+
+* input variable `chop` to control how many lines are removed from the end of the matching part of `CHANGELOG.md`
+
+### Changed
+
+* the variables `startPattern` and `endPattern` are now called `start-pattern` and `end-pattern` instead
+
 ## [0.1.8]
 
 ### Fixed
