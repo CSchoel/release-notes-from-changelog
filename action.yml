@@ -22,10 +22,10 @@ runs:
       shell: bash
       run: >
         if [ "$INPUT_VERSION" = "<tag version>" ]; then
-          echo "RELEASE_VERSION=$INPUT_VERSION" >> $GITHUB_ENV;
-        else
           RELEASE_VERSION_TEMP=${GITHUB_REF#refs/*/};
           echo "RELEASE_VERSION=${RELEASE_VERSION_TEMP#v}" >> $GITHUB_ENV;
+        else
+          echo "RELEASE_VERSION=$INPUT_VERSION" >> $GITHUB_ENV;
         fi
 
     - name: Extract changelog for release version
