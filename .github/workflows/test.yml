@@ -14,7 +14,7 @@ jobs:
           endPattern: and `RELEASE_HEAD.md`
       - run: cat RELEASE.md
   build-pattern:
-    name: Create release notes for first version in changelog
+    name: Uses explicit start and end pattern
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
