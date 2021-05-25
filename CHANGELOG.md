@@ -9,15 +9,25 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 
-[nothing]
+nothing
 
 ### Changed
 
-[nothing]
+nothing
 
 ### Fixed
 
-[nothing]
+nothing
+
+## [0.2.1]
+
+### Added
+
+* parameter `link-pattern` that allows to extract footnote-style link for version from changelog
+
+### Changed
+
+* changelog now also contains links that allow to compare versions on github
 
 ## [0.2.0]
 
@@ -25,10 +35,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 * renames `start-pattern` to `begin-pattern` for better naming consistency (begin/end instead of start/end)
 * adds surrounding slashes to `begin-pattern` and `end-pattern`, so that other sed patterns like `$` can be used
-
-### Fixed
-
-[nothing]
 
 ## [0.1.9]
 
@@ -101,6 +107,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 [Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.0..HEAD
+[0.2.1]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.0..v0.2.1
 [0.2.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.1.9..v0.2.0
 [0.1.9]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.1.8..v0.1.9
 [0.1.8]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.1.7..v0.1.8
