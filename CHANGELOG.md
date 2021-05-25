@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [nothing]
 
+## [0.1.7]
+
+### Fixed
+
+* accidentally switched cases in if 🤦
+
 ## [0.1.6]
 
 ### Added
