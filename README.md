@@ -34,6 +34,7 @@ jobs:
     end-pattern: end pattern used in sed command (default '/^## /')
     link-pattern: pattern used in grep command to find footnote-style link for version (default '^\\[${RELEASE_VERSION}\\]:')
     chop: number of lines to cut from end of matched region
+    working-directory: path where RELEASE_HEAD.md and CHANGELOG.md are found and where RELEASE.md is placed
 ```
 
 ## Known issues
