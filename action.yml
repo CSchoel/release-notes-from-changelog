@@ -23,10 +23,10 @@ inputs:
     description: 'Number of lines to chop from end of matching part of CHANGELOG.md'
     required: false
     default: '2'
-  head-path:
-    description: 'Path to header file used for release notes'
+  working-directory:
+    description: 'Path to folder where CHANGELOG.md and RELEASE_HEAD.md can be found and where RELEASE.md should be placed'
     required: false
-    default: 'RELEASE_HEAD.md'
+    default: '.'
 runs:
   using: "composite"
   steps:
@@ -42,13 +42,14 @@ runs:
 
     - name: Extract changelog for release version
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       # explanation of sed command:
       # 1. select lines between begin-pattern and end-pattern
       # 2. invert this selection
       # 3. delete it
       # => only selection is remaining in stream
       run: |
-        cp "${{ inputs.head-path }}" RELEASE.md
+        cp RELEASE_HEAD.md RELEASE.md
         printf "\n" >> RELEASE.md
         echo "Pattern used for sed: ${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d"
         sed -e "${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d" CHANGELOG.md | head -n -${{ inputs.chop }} >> RELEASE.md
