@@ -23,6 +23,10 @@ inputs:
     description: 'Number of lines to chop from end of matching part of CHANGELOG.md'
     required: false
     default: '2'
+  head-path:
+    description: 'Path to header file used for release notes'
+    required: false
+    default: 'RELEASE_HEAD.md'
 runs:
   using: "composite"
   steps:
@@ -44,7 +48,7 @@ runs:
       # 3. delete it
       # => only selection is remaining in stream
       run: |
-        cp RELEASE_HEAD.md RELEASE.md
+        cp "${{ inputs.head-path }}" RELEASE.md
         printf "\n" >> RELEASE.md
         echo "Pattern used for sed: ${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d"
         sed -e "${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d" CHANGELOG.md | head -n -${{ inputs.chop }} >> RELEASE.md
