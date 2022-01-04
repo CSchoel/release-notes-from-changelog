@@ -19,6 +19,20 @@ nothing
 
 nothing
 
+## [1.1.0] - 2022-01-04
+
+### Added
+
+* input variable `working-directory` to work with repositories checked out in a subfolder
+
+### Changed
+
+* CI tests are now also run on the branch `dev` in addition to `main`
+
+### Fixed
+
+* Makes YAML files fully conform to GitHub Action schema
+
 ## [1.0.0] - 2021-05-25
 
 ### Changed
@@ -113,7 +127,8 @@ nothing
 * changelog, readme and `RELEASE_HEAD.md`
 
 
-[Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.0.0..HEAD
+[Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.1.0..HEAD
+[1.1.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.0.0..v1.1.0
 [1.0.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.1..v1.0.0
 [0.2.1]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.0..v0.2.1
 [0.2.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.1.9..v0.2.0
