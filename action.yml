@@ -22,7 +22,7 @@ inputs:
   chop:
     description: 'Number of lines to chop from end of matching part of CHANGELOG.md'
     required: false
-    default: 2
+    default: '2'
 runs:
   using: "composite"
   steps:
