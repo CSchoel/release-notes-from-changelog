@@ -25,3 +25,15 @@ jobs:
           begin-pattern: '/^### Fixed/'
           end-pattern: '/^##/'
       - run: cat RELEASE.md
+  build-headpath:
+    name: Uses the input variable head-path
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: subdir
+      - uses: CSchoel/release-notes-from-changelog@v1.1
+        with:
+          version: 1.1.0
+          head-path: subdir/RELEASE_HEAD.md
+      - run: cat RELEASE.md
