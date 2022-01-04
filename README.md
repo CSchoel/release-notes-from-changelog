@@ -13,7 +13,7 @@ jobs:
     name: "My fancy build"
     runs-on: ubuntu-latest
     steps:
-      - uses: CSchoel/release-notes-from-changelog@v1
+      - uses: CSchoel/release-notes-from-changelog@v1.1
       - uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
