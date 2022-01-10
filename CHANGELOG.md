@@ -19,6 +19,20 @@ nothing
 
 nothing
 
+## [1.2.0] - 2022-01-10
+
+### Added
+
+* Test case for missing URL for footnote-style markdown link in CHANGELOG.md
+
+### Changed
+
+* Split main script into multiple steps and added more output for better debugging.
+* Final `grep` step is now only run if the link pattern can actually be found in the changelog.
+    If not, a warning is printed.
+* Switches to `uses: ./` to use local version of action in all CI/CD scripts.
+    This avoids the need to specify the action version within the CI/CD scripts and ensures that the current version is used.
+
 ## [1.1.0] - 2022-01-04
 
 ### Added
