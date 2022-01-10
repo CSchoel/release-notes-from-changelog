@@ -32,6 +32,7 @@ nothing
     If not, a warning is printed.
 * Switches to `uses: ./` to use local version of action in all CI/CD scripts.
     This avoids the need to specify the action version within the CI/CD scripts and ensures that the current version is used.
+* Uses [GitHub CLI](https://cli.github.com/manual/gh_release_create) instead of [unmaintained `actions/create-release`](https://github.com/actions/create-release) both in README example and release script.
 
 ## [1.1.0] - 2022-01-04
 
