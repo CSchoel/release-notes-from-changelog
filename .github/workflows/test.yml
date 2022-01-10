@@ -38,3 +38,13 @@ jobs:
           version: 1.1.0
           working-directory: subdir
       - run: cat subdir/RELEASE.md
+  build-missing-link:
+    name: Tests what happens if link is missing in CHANGELOG.md
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Remove link from CHANGELOG.md
+        run: sed -i 's/\[0.1.1\]:.*//' CHANGELOG.md
+      - uses: ./
+        with:
+          version: 0.1.1
