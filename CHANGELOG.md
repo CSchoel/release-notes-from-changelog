@@ -19,6 +19,26 @@ nothing
 
 nothing
 
+## [1.2.0] - 2022-01-10
+
+### Added
+
+* Test case for missing URL for footnote-style markdown link in CHANGELOG.md
+
+### Changed
+
+* Split main script into multiple steps and added more output for better debugging.
+* Final `grep` step is now only run if the link pattern can actually be found in the changelog.
+    If not, a warning is printed.
+* Switches to `uses: ./` to use local version of action in all CI/CD scripts.
+    This avoids the need to specify the action version within the CI/CD scripts and ensures that the current version is used.
+* Uses [GitHub CLI](https://cli.github.com/manual/gh_release_create) instead of [unmaintained `actions/create-release`](https://github.com/actions/create-release) both in README example and release script.
+
+### Fixed
+
+* Major version tags for actions such as `v1` should always [point to the most recent version with that prefix](https://docs.github.com/en/actions/creating-actions/about-custom-actions#using-tags-for-release-management).
+    This was not true for `v1` in this repo before.
+
 ## [1.1.0] - 2022-01-04
 
 ### Added
@@ -127,7 +147,8 @@ nothing
 * changelog, readme and `RELEASE_HEAD.md`
 
 
-[Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.1.0..HEAD
+[Unreleased]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.2.0..HEAD
+[1.2.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.1.0..v1.2.0
 [1.1.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v1.0.0..v1.1.0
 [1.0.0]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.1..v1.0.0
 [0.2.1]: https://github.com/CSchoel/release-notes-from-changelog/compare/v0.2.0..v0.2.1

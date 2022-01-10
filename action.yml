@@ -39,7 +39,16 @@ runs:
         else
           echo "RELEASE_VERSION=${{ inputs.version }}" >> $GITHUB_ENV;
         fi
-
+    - name: Print RELEASE_VERSION variable to be used in sed/grep patterns
+      shell: bash
+      run: echo "\$RELEASE_VERSION = $RELEASE_VERSION"
+    - name: Start RELEASE.md with copy of RELEASE_HEAD.md
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        cp RELEASE_HEAD.md RELEASE.md
+        printf "\n" >> RELEASE.md
+        echo "Created release notes at `realpath RELEASE.md`"
     - name: Extract changelog for release version
       shell: bash
       working-directory: ${{ inputs.working-directory }}
@@ -49,9 +58,17 @@ runs:
       # 3. delete it
       # => only selection is remaining in stream
       run: |
-        cp RELEASE_HEAD.md RELEASE.md
-        printf "\n" >> RELEASE.md
         echo "Pattern used for sed: ${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d"
         sed -e "${{ inputs.begin-pattern }},${{ inputs.end-pattern }} ! d" CHANGELOG.md | head -n -${{ inputs.chop }} >> RELEASE.md
         printf "\n" >> RELEASE.md
-        grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md
+    - name: Extract compare link for release version if it exists
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      # only run grep if the link-pattern can actually be found
+      run: |
+        if grep -q "${{ inputs.link-pattern }}" CHANGELOG.md; then
+          grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md
+        else
+          echo "Warning: The Link-pattern '${{ inputs.link-pattern }}' could not be found in `realpath CHANGELOG.md`."
+          echo "Perhaps you forgot to add a line of the form '[$RELEASE_VERSION]: url' to the end of your changelog."
+        fi
