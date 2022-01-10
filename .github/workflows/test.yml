@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: subdir
-      - uses: ./
+      - uses: ./subdir
         with:
           version: 1.1.0
           working-directory: subdir
