@@ -70,5 +70,5 @@ runs:
           grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md
         else
           echo "Warning: The Link-pattern '${{ inputs.link-pattern }}' could not be found in `realpath CHANGELOG.md`."
-          echo "Perhaps you forgot to add a line of the form '[X.Y.Z]: url' to the end of your changelog."
+          echo "Perhaps you forgot to add a line of the form '[$RELEASE_VERSION]: url' to the end of your changelog."
         fi
