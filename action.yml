@@ -64,5 +64,11 @@ runs:
     - name: Extract compare link for release version if it exists
       shell: bash
       working-directory: ${{ inputs.working-directory }}
+      # only run grep if the link-pattern can actually be found
       run: |
-        grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md
+        if [ grep -q "${{ inputs.link-pattern }}" CHANGELOG.md ]; then
+          grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md
+        else
+          echo "Warning: The Link-pattern '${{ inputs.link-pattern }}' could not be found in `realpath CHANGELOG.md`."
+          echo "Perhaps you forgot to add a line of the form '[X.Y.Z]: url' to the end of your changelog."
+        fi
