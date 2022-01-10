@@ -66,7 +66,7 @@ runs:
       working-directory: ${{ inputs.working-directory }}
       # only run grep if the link-pattern can actually be found
       run: |
-        if [ grep -q "${{ inputs.link-pattern }}" CHANGELOG.md ]; then
+        if grep -q "${{ inputs.link-pattern }}" CHANGELOG.md; then
           grep "${{ inputs.link-pattern }}" CHANGELOG.md >> RELEASE.md
         else
           echo "Warning: The Link-pattern '${{ inputs.link-pattern }}' could not be found in `realpath CHANGELOG.md`."
