@@ -34,6 +34,11 @@ nothing
     This avoids the need to specify the action version within the CI/CD scripts and ensures that the current version is used.
 * Uses [GitHub CLI](https://cli.github.com/manual/gh_release_create) instead of [unmaintained `actions/create-release`](https://github.com/actions/create-release) both in README example and release script.
 
+### Fixed
+
+* Major version tags for actions such as `v1` should always [point to the most recent version with that prefix](https://docs.github.com/en/actions/creating-actions/about-custom-actions#using-tags-for-release-management).
+    This was not true for `v1` in this repo before.
+
 ## [1.1.0] - 2022-01-04
 
 ### Added
