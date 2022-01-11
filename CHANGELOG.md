@@ -19,11 +19,12 @@ nothing
 
 nothing
 
-## [1.2.0] - 2022-01-10
+## [1.2.0] - 2022-01-11
 
 ### Added
 
 * Test case for missing URL for footnote-style markdown link in CHANGELOG.md
+* Icon and color info in YAML file.
 
 ### Changed
 
@@ -33,6 +34,7 @@ nothing
 * Switches to `uses: ./` to use local version of action in all CI/CD scripts.
     This avoids the need to specify the action version within the CI/CD scripts and ensures that the current version is used.
 * Uses [GitHub CLI](https://cli.github.com/manual/gh_release_create) instead of [unmaintained `actions/create-release`](https://github.com/actions/create-release) both in README example and release script.
+* Adjusted `name` and `description` in YAML file to match requirements of GH marketplace.
 
 ### Fixed
 

@@ -1,7 +1,8 @@
-name: Create release notes
-description: |
-  Extracts release notes for current tag from CHANGELOG.md and writes them to a file called RELEASE.md.
-  It is assumed that a header for RELEASE.md is found in the file RELEASE_HEAD.md.
+name: Create release notes from changelog
+description: Extracts release notes from CHANGELOG.md, combines them with a static header RELEASE_HEAD.md and writes them to RELEASE.md.
+branding:
+  icon: file-text
+  color: purple
 inputs:
   version:
     description: 'Version number to search for in CHANGELOG.md (default: use tag without leading v)'
