@@ -5,7 +5,9 @@ Release-notes-from-changelog is a GitHub action for extracting release notes fro
 For this action to work you need a file in your repository called `RELEASE_HEAD.md` that contains any header text that you want to add to all your releases.
 This can be, for example, a short sentence explaining the general purpose of the project, or simply a note that the following text was extracted from a changelog.
 
-It can be used as follows:
+If `RELEASE_HEAD.md` does not exist, the first-level heading and first paragraph of the file `README.md` will be used instead.
+
+The action can be used as follows:
 
 ```yaml
 jobs:

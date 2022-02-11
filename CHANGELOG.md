@@ -19,6 +19,12 @@ nothing
 
 nothing
 
+## [1.3.0] - 2022-02-11
+
+### Added
+
+* RELEASE_HEAD.md is not created from README.md if it does not exist yet.
+
 ## [1.2.0] - 2022-01-11
 
 ### Added
