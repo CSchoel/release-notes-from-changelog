@@ -56,7 +56,7 @@ runs:
           else
             sed -ne "1,/^$/ p" README.md > RELEASE_HEAD.md
           fi
-          echo "Changes in this version:\n" >> RELEASE_HEAD.md
+          echo -e "Changes in this version:\n" >> RELEASE_HEAD.md
         fi
     - name: Start RELEASE.md with copy of RELEASE_HEAD.md
       shell: bash
