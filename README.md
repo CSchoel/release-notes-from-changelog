@@ -13,6 +13,7 @@ jobs:
     name: "My fancy build"
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: CSchoel/release-notes-from-changelog@v1
       - name: Create Release using GitHub CLI
         env:
