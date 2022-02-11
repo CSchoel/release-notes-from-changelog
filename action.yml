@@ -43,6 +43,21 @@ runs:
     - name: Print RELEASE_VERSION variable to be used in sed/grep patterns
       shell: bash
       run: echo "\$RELEASE_VERSION = $RELEASE_VERSION"
+    - name: Extract first paragraph from README.md if RELEASE_HEAD.md does not exist
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      # explanation of sed command
+      # 1. "/^# / p" prints line(s) with first-level heading
+      # 2. "2,/^$/ p" prints lines from second line to next empty line
+      run: |
+        if [ ! -f RELEASE_HEAD.md ]; then
+          if grep -q "^# " README.md; then
+            sed -ne "/^# / p; 2,/^$/ p" README.md > RELEASE_HEAD.md
+          else
+            sed -ne "1,/^$/ p" README.md > RELEASE_HEAD.md
+          fi
+          echo "Changes in this version:\n" >> RELEASE_HEAD.md
+        fi
     - name: Start RELEASE.md with copy of RELEASE_HEAD.md
       shell: bash
       working-directory: ${{ inputs.working-directory }}
