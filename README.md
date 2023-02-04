@@ -2,10 +2,13 @@
 
 Release-notes-from-changelog is a GitHub action for extracting release notes from a changelog formatted according to https://keepachangelog.com/en/1.0.0/.
 
-For this action to work you need a file in your repository called `RELEASE_HEAD.md` that contains any header text that you want to add to all your releases.
+By default, the release message starts with the first-level heading and first paragraph of the file `README.md`.
+If you want to customize this, you need a file in your repository called `RELEASE_HEAD.md` that contains any header text that you want to add to all your releases.
 This can be, for example, a short sentence explaining the general purpose of the project, or simply a note that the following text was extracted from a changelog.
 
-If `RELEASE_HEAD.md` does not exist, the first-level heading and first paragraph of the file `README.md` will be used instead.
+The version number so search for is given using the `version` parameter and stored in the variable `RELEASE_VERSION`.
+If you use tags of the form `X.Y.Z` or `vX.Y.Z` to trigger your releases, you don't need to set that parameter, since the action will just use the tag name instead.
+To be specific, this will work as long as you use the same string for the headings in `CHANGELOG.md` as you use for git tags, with the only exception that a leading `v` will be stripped from the tag if it is there.
 
 The action can be used as follows:
 

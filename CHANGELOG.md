@@ -17,7 +17,8 @@ nothing
 
 ### Fixed
 
-nothing
+* Mentioned default value for `version` in README.
+* Improved description of how to get version and header in README.
 
 ## [1.3.0] - 2022-02-11
 
