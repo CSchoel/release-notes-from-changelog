@@ -33,7 +33,7 @@ jobs:
 ```yaml
 - uses: CSchoel/release-notes-from-changelog@v1
   with:
-    version: version string to search in the changelog
+    version: version string to search in the changelog (default to tag without leading v)
     begin-pattern: begin pattern used in sed command (default '/^## \\[${RELEASE_VERSION}\\]/')
     end-pattern: end pattern used in sed command (default '/^## /')
     link-pattern: pattern used in grep command to find footnote-style link for version (default '^\\[${RELEASE_VERSION}\\]:')
